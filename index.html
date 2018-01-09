@@ -11,7 +11,7 @@
   <meta name="description" content="Angular Bootstrap Dashboard"/>
   <meta name="keywords" content="Angular Bootstrap Dashboard"/>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  
+
     <link href="plugins/angular-material/angular-material.min.css" rel="stylesheet" />
     <!--CSS-->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -26,6 +26,10 @@
     <link href="plugins/owl-carousel/owl.theme.css" rel="stylesheet" />
     <link href="plugins/owl-carousel/owl.transitions.css" rel="stylesheet" />
     <link href="plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
+
+    <!-- Map -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
 </head>
 <body ng-app="app" class="hold-transition sidebar-mini {{theme}} {{layout}}">
     <!--Scripts-->
@@ -68,20 +72,30 @@
     <!--Dashboard Module-->
     <script src="app/modules/dashboard/dashboardApplication.js"></script>
     <script src="app/modules/dashboard/dashboardService.js"></script>
-        <!-- Controllers -->
-        <script src="app/modules/dashboard/controllers/websites.js"></script>
-        <script src="app/modules/dashboard/controllers/about.js"></script>
-        <script src="app/modules/dashboard/controllers/achievements.js"></script>
-        <script src="app/modules/dashboard/controllers/contact.js"></script>
-        <script src="app/modules/dashboard/controllers/education.js"></script>
+
+    <!-- Generic APIs -->
+    <script src="app/modules/dashboard/controllers/helpers/crudSvc.js"></script>
+    <script src="app/modules/dashboard/controllers/helpers/missionSvc.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/modules/dashboard/controllers/websites.js"></script>
+    <script src="app/modules/dashboard/controllers/about.js"></script>
+    <script src="app/modules/dashboard/controllers/achievements.js"></script>
+    <script src="app/modules/dashboard/controllers/contact.js"></script>
+    <script src="app/modules/dashboard/controllers/education.js"></script>
         <script src="app/modules/dashboard/controllers/experience.js"></script>
-        <script src="app/modules/dashboard/controllers/gallery.js"></script>
-        <script src="app/modules/dashboard/controllers/home.js"></script>
-        <script src="app/modules/dashboard/controllers/portfolio.js"></script>
-        <script src="app/modules/dashboard/controllers/recent.js"></script>
-        <script src="app/modules/dashboard/controllers/skills.js"></script>
+    <script src="app/modules/dashboard/controllers/gallery.js"></script>
+    <script src="app/modules/dashboard/controllers/home.js"></script>
+    <script src="app/modules/dashboard/controllers/portfolio.js"></script>
+    <script src="app/modules/dashboard/controllers/recent.js"></script>
+    <script src="app/modules/dashboard/controllers/missionAreas.js"></script>
+
+    <!-- Map -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="app/modules/dashboard/controllers/map.js"></script>
+
     <div flash-message="5000"></div>
     <ui-view></ui-view>
-    
+
 </body>
 </html>

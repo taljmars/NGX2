@@ -2,9 +2,9 @@
     Author      : Ranjithprabhu K
     Date Created: 24 Dec 2015
     Description : Controller to handle main application
-    
+
     Change Log
-    s.no      date    author     description     
+    s.no      date    author     description
  ===========================================================*/
 
 app.controller("appCtrl", ['$rootScope', '$scope', '$state', '$location', 'Flash','appSettings',
@@ -117,9 +117,14 @@ function ($rootScope, $scope, $state, $location, Flash,appSettings) {
             state: "dashboard"
         },
         {
-            title: "Skills",
+            title: "Map",
+            icon: "dashboard",
+            state: "map"
+        },
+        {
+            title: "Mission And Areas",
             icon: "gears",
-            state: "skills"
+            state: "missionAreas"
         },
         {
             title: "Education",

@@ -7,7 +7,7 @@ Date: 05 Jan 2016
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-           My Home Page
+           Home
         </h1>
         <ol class="breadcrumb">
             <li><a><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -53,11 +53,11 @@ Date: 05 Jan 2016
                                 <p class="text-center">
                                     <strong>Know About Me</strong>
                                 </p>
-                                <div class="progress-group" data-ng-repeat="skill in vm.home.skills">
-                                    <span class="progress-text">{{skill.title}}</span>
-                                    <span class="progress-number"><b>{{skill.percentage}}</b>/100</span>
+                                <div class="progress-group" data-ng-repeat="missionAreas in vm.home.missionAreas">
+                                    <span class="progress-text">{{missionAreas.title}}</span>
+                                    <span class="progress-number"><b>{{missionAreas.percentage}}</b>/100</span>
                                     <div class="progress sm border-radius-5">
-                                        <div class="progress-bar progress-bar-{{skill.theme}}" style="width: {{skill.percentage}}%"></div>
+                                        <div class="progress-bar progress-bar-{{missionAreas.theme}}" style="width: {{missionAreas.percentage}}%"></div>
                                     </div>
                                 </div><!-- /.progress-group -->
                             </div><!-- /.col -->
