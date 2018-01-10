@@ -2,10 +2,10 @@
     Author      : Ranjithprabhu K
     Date Created: 24 Dec 2015
     Description : Base for Dashboard Application module
-    
+
     Change Log
-    s.no      date    author     description     
-    
+    s.no      date    author     description
+
 
  ===========================================================*/
 
@@ -25,14 +25,25 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
         }
     });
 
-    //skills page state
-    $stateProvider.state('app.skills', {
-        url: '/skills',
-        templateUrl: 'app/modules/dashboard/views/skills.html',
-        controller: 'SkillController',
+    //map page state
+    $stateProvider.state('app.map', {
+        url: '/map',
+        templateUrl: 'app/modules/dashboard/views/map.html',
+        controller: 'MapController',
         controllerAs: 'vm',
         data: {
-            pageTitle: 'Skills'
+            pageTitle: 'Map'
+        }
+    });
+
+    //missionAreas page state
+    $stateProvider.state('app.missionAreas', {
+        url: '/missionAreas',
+        templateUrl: 'app/modules/dashboard/views/missionAreas.html',
+        controller: 'missionAreasController',
+        controllerAs: 'vm',
+        data: {
+            pageTitle: 'Mission and Areas'
         }
     });
 
@@ -147,4 +158,3 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
     });
 
 }]);
-

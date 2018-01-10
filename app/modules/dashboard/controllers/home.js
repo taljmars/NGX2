@@ -3,7 +3,7 @@
     Date Created: 13 Jan 2016
     Description : Controller to handle Home page
     Change Log
-    s.no      date    author     description     
+    s.no      date    author     description
 
 
  ===========================================================*/
@@ -14,16 +14,22 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
 
     vm.showDetails = true;
     vm.home = {};
-    
+
     vm.home.mainData = [
         {
-            title: "Projects",
+            title: "Flights",
+            value: "0",
+            theme: "yellow",
+            icon: "glass"
+        },
+        {
+            title: "Duration",
             value: "30+",
             theme: "aqua",
             icon: "puzzle-piece"
         },
         {
-            title: "Designs",
+            title: "Distance",
             value: "250+",
             theme: "red",
             icon: "paint-brush"
@@ -34,16 +40,10 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
             theme: "green",
             icon: "trophy"
         },
-        {
-            title: "Cups of Beer",
-            value: "0",
-            theme: "yellow",
-            icon: "glass"
-        },
     ];
 
-    //skills progress bar
-    vm.home.skills = [
+    //missionAreas progress bar
+    vm.home.missionAreas = [
         {
             title: "Design & Development",
             theme: "aqua",
@@ -222,4 +222,3 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
         autoPlay: 5000, //Set AutoPlay to 3 seconds
     });
 }]);
-

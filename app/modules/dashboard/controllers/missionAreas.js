@@ -1,21 +1,21 @@
 ﻿/*==========================================================
     Author      : Ranjithprabhu K
     Date Created: 13 Jan 2016
-    Description : Controller to handle Skills page
+    Description : Controller to handle missionAreasController page
     Change Log
-    s.no      date    author     description     
+    s.no      date    author     description
 
 
  ===========================================================*/
 
-dashboard.controller("SkillController", ['$rootScope', '$scope', '$state', '$location', 'dashboardService', 'Flash',
+dashboard.controller("missionAreasController", ['$rootScope', '$scope', '$state', '$location', 'dashboardService', 'Flash',
 function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
     var vm = this;
 
-    vm.skills = {};
+    vm.missionAreas = {};
 
-    //development stack
-    vm.skills.development = [
+    //missions
+    vm.missionAreas.missions = [
         {
             Software: "Mongo DB",
             Percentage: "80",
@@ -67,7 +67,7 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
     ];
 
     //Design Stack
-    vm.skills.design = [
+    vm.missionAreas.design = [
         {
             Software: "HTML 5",
             Percentage: "90",
@@ -113,7 +113,7 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
     ];
 
     //Other Stack
-    vm.skills.others = [
+    vm.missionAreas.others = [
         {
             Software: "Java",
             Percentage: "60",
@@ -139,5 +139,32 @@ function ($rootScope, $scope, $state, $location, dashboardService, Flash) {
             image: "cloud"
         }
     ];
-}]);
 
+    function fillMissions(missions) {
+      console.log("fillMissions >>>>");
+      if (missions == 0) {
+        console.log("Failed to get missions");
+        return;
+      }
+      var missionAmount = missions.length;
+      for (var i = 0 ; i < missionAmount ; i++) {
+        console.log("TAL " + missions[i]);
+        console.log("TAL " + missions[i]["name"]);
+        console.log("<<<< fillMissions");
+
+        var date = new Date(null);
+        date.setSeconds(missions[i]["creationDate"]); // specify value for SECONDS here
+        date.toISOString().substr(11, 8);
+
+        vm.missionAreas.missions.push({
+          Software: missions[i]["name"],
+          Percentage: missions[i]["missionItemsUids"].length,
+          Since: date.toGMTString(),
+          theme: "yellow",
+          image: "mongodb"
+        });
+      }
+    }
+
+    getAllMissions(fillMissions, null);
+}]);
