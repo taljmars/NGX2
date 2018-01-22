@@ -137,14 +137,14 @@ function ($rootScope, $scope, $state, $location, Flash,appSettings) {
             state: "experience"
         },
         {
-            title: "Recent Projects",
-            icon: "file-code-o",
-            state: "recent"
-        },
-        {
             title: "Websites",
             icon: "globe",
             state: "websites"
+        },
+        {
+            title: "Drone Log",
+            icon: "user-secret",
+            state: "droneLog"
         },
         {
             title: "Portfolio",

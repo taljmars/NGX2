@@ -69,17 +69,6 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
         }
     });
 
-    //Recent Projects page state
-    $stateProvider.state('app.recent', {
-        url: '/recent-projects',
-        templateUrl: 'app/modules/dashboard/views/recent.html',
-        controller: 'RecentController',
-        controllerAs: 'vm',
-        data: {
-            pageTitle: 'Recent Projects'
-        }
-    });
-
     //Experience page state
     $stateProvider.state('app.experience', {
         url: '/experience',
@@ -88,6 +77,17 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
         controllerAs: 'vm',
         data: {
             pageTitle: 'Experience'
+        }
+    });
+
+    //Drone Log page state
+    $stateProvider.state('app.droneLog', {
+        url: '/drone-log',
+        templateUrl: 'app/modules/dashboard/views/droneLog.html',
+        controller: 'DroneLogController',
+        controllerAs: 'vm',
+        data: {
+            pageTitle: 'Drone Log'
         }
     });
 
